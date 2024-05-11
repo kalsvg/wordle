@@ -1,7 +1,6 @@
 # Define a class representing a game of Wordle.
 
 import os
-import time
 import random
 from colorama import Fore, Back, Style
 
