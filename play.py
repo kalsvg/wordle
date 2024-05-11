@@ -1,12 +1,13 @@
 # Play a game of Wordle.
 
-import json
 from wordle_game import WordleGame
 
-with open("word_list.json", "r") as file:
-    word_list = json.load(file)
-with open("word_bank.json", "r") as file:
-    word_bank = json.load(file)
+# Load word list and word bank
+# source: https://github.com/Kinkelin/WordleCompetition/tree/main/data/official
+with open("combined_wordlist.txt", "r") as f:
+    word_list = [line.upper() for line in f.read().splitlines()[1:]]
+with open("shuffled_real_wordles.txt", "r") as f:
+    word_bank = [line.upper() for line in f.read().splitlines()[1:]]
 
 game = WordleGame(word_list, word_bank)
 game.play_game()
